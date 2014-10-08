@@ -16,5 +16,10 @@ var main = {
 		txt += "傾きx:"+xg+"傾きy:"+yg+"傾きz:"+zg+"";
 		txt += "alpha(Z):"+a+"beta(X):"+b+"gamma(Y):"+g;
 		document.getElementById("sensor").innerHTML = txt;
+	},
+	reload: function() {
+		var url = document.getElementById("urlinput").value;
+		var iframe = document.getElementById("iframe");
+		iframe.contentDocument.location.replace(url);
 	}
 }

@@ -7,14 +7,14 @@
 <body>
 	<h1>Shake Web!!</h1>
 
-	<form>
-		<p><input type="text" name="url" value="http://ja.wikipedia.org/wiki/メインページ" size="30"></p>
-		<p><input type="submit" value="Go!!"></p>
-	</form>
+	<div>
+		<p><input id="urlinput" type="text" name="url" value="http://ja.wikipedia.org/wiki/メインページ" size="30"></p>
+		<button onclick="main.reload();">Go</button>
+	</div>
 
-	<iframe src="http://ja.wikipedia.org/wiki/メインページ"></iframe>
+
+	<iframe id="iframe" src="http://ja.wikipedia.org/wiki/メインページ"></iframe>
 	<div id="sensor"></div>
-
 
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
