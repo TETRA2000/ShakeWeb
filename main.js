@@ -1,3 +1,5 @@
+var lastXG=0, lastYG=0, lastZG=0;
+
 var main = {
 	init:function() {
 		window.addEventListener("devicemotion", this.devicemotion, true);
@@ -14,12 +16,19 @@ var main = {
 		var g = evt.rotationRate.gamma; // Y方向の回転値
 		var txt = "x:"+x+"y:"+y+"z:"+z+"";
 		txt += "傾きx:"+xg+"傾きy:"+yg+"傾きz:"+zg+"";
-		txt += "alpha(Z):"+a+"beta(X):"+b+"gamma(Y):"+g;
+		txt += "alpha(Z):"+a+"beta(X):"+b+"gamma(Y):"+g;		
+		
+		var dXG = xg - lastXG;
+		var dYG = yg - lastYG;
+		var dZG = zg - lastZG;
+		
+		lastXG = xg;
+		lastYG = yg;
+		lastZG = zg;
+		
+		txt = "\n" + dXG + ", " + dYG + ", " + dZG+"";
+		
 		document.getElementById("sensor").innerHTML = txt;
-	},
-	reload: function() {
-		var url = document.getElementById("urlinput").value;
-		var iframe = document.getElementById("iframe");
-		iframe.contentDocument.location.replace(url);
+		
 	}
 }
