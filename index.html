@@ -9,11 +9,12 @@
 
 	<div>
 		<p><input id="urlinput" type="text" name="url" value="http://ja.wikipedia.org/wiki/メインページ" size="30"></p>
-		<button onclick="main.reload();">Go</button>
+		<button onclick="main.newiframe();">Go</button>
 	</div>
 
-
-	<iframe id="iframe" src="http://ja.wikipedia.org/wiki/メインページ"></iframe>
+	<div id="placeholder">
+		<iframe id="iframe" src="http://ja.wikipedia.org/wiki/メインページ"></iframe>
+	</div>
 	<div id="sensor"></div>
 
 	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>

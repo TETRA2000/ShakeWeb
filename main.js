@@ -9,6 +9,12 @@ var main = {
         var iframe = document.getElementById("iframe");
         iframe.contentDocument.location.href = url;
     },
+    newiframe: function() {
+    	$("#iframe").remove();
+    	
+    	var url = document.getElementById("urlinput").value;
+    	$("#placeholder").append("<iframe id=\"iframe\"  src=\"" + url + "\"></iframe>");
+    },
 	devicemotion: function(evt) {
 		var x = evt.acceleration.x; // X方向の加速度
 		var y = evt.acceleration.y; // Y方向の加速度
