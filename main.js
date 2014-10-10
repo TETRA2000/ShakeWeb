@@ -7,7 +7,7 @@ var main = {
     reload: function() {
         var url = document.getElementById("urlinput").value;
         var iframe = document.getElementById("iframe");
-        iframe.contentDocument.location.replace(url);
+        iframe.contentDocument.location.href = url;
     },
 	devicemotion: function(evt) {
 		var x = evt.acceleration.x; // X方向の加速度
