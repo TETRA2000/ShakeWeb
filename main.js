@@ -4,6 +4,11 @@ var main = {
 	init:function() {
 		window.addEventListener("devicemotion", this.devicemotion, true);
 	},
+    reload: function() {
+        var url = document.getElementById("urlinput").value;
+        var iframe = document.getElementById("iframe");
+        iframe.contentDocument.location.replace(url);
+    },
 	devicemotion: function(evt) {
 		var x = evt.acceleration.x; // X方向の加速度
 		var y = evt.acceleration.y; // Y方向の加速度
