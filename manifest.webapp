@@ -1,0 +1,13 @@
+{
+  "name": "Shake Web!!",
+  "description": "Shake Web site!!",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "TETRA2000",
+    "url": "https://github.com/TETRA2000"
+  },
+  "default_locale": "en"
+}
