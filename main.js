@@ -1,4 +1,4 @@
-var lastX=0, lastY=0, lastZ=0;
+var lastXG=0, lastYG=0, lastZG=0;
 
 var main = {
 	init:function() {
@@ -16,20 +16,19 @@ var main = {
     	$("#placeholder").append("<iframe id=\"iframe\"  src=\"" + url + "\"></iframe>");
     },
 	devicemotion: function(evt) {
-		var x = evt.acceleration.x; // X方向の加速度
-		var y = evt.acceleration.y; // Y方向の加速度
-		var z = evt.acceleration.z; // Z方向の加速度	
+		var xg = evt.accelerationIncludingGravity.x; // X方向の傾き
+		var yg = evt.accelerationIncludingGravity.y; // Y方向の傾き
+		var zg = evt.accelerationIncludingGravity.z; // Z方向の傾き
 		
-		var dX = x - lastX;
-		var dY = y - lastY;
-		var dZ = z - lastZ;
+		var dXG = xg - lastXG;
+		var dYG = yg - lastYG;
+		var dZG = zg - lastZG;
 		
-		lastX = xg;
-		lastY = yg;
-		lastZ = zg;
+		lastXG = xg;
+		lastYG = yg;
+		lastZG = zg;
 		
-		// var transform = 'translate3d(' + (dX*100) + 'px, ' + (dY*100) + 'px, ' + (dZ*100) + 'px)';
-		// $("#iframe").css('transform':transform);
-		$("#iframe").css('transform','translate3d(50px,20px,10px)');
+		var transform = "translate3d(" + (dXG*50) + "px, " + (dYG*50) + "px, " + (dZG*50) + "px)";
+		$("#iframe").css("transform", transform);
 	}
 }
