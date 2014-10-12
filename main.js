@@ -30,6 +30,6 @@ var main = {
 		
 		// var transform = 'translate3d(' + (dX*100) + 'px, ' + (dY*100) + 'px, ' + (dZ*100) + 'px)';
 		// $("#iframe").css('transform':transform);
-		$("#iframe").css('transform':'translate3d(50px,20px,10px)');
+		$("#iframe").css('transform','translate3d(50px,20px,10px)');
 	}
 }
